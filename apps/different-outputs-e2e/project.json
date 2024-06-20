@@ -1,0 +1,26 @@
+{
+  "name": "different-outputs-e2e",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/different-outputs-e2e/src",
+  "targets": {
+    "e2e": {
+      "executor": "@nx/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/different-outputs-e2e/cypress.config.ts",
+        "testingType": "e2e",
+        "devServerTarget": "different-outputs:serve:development"
+      },
+      "configurations": {
+        "ci": {
+          "devServerTarget": "different-outputs:serve-static"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  },
+  "tags": [],
+  "implicitDependencies": ["different-outputs"]
+}
