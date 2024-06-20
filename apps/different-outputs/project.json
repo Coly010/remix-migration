@@ -10,6 +10,11 @@
       "outputs": ["{options.outputPath}"],
       "options": {
         "outputPath": "dist/apps/different-outputs"
+      },
+      "configurations": {
+        "prod": {
+          "outputPath": "dist/apps/prod/different-outputs"
+        }
       }
     },
     "serve": {
@@ -18,6 +23,12 @@
         "command": "npx remix-serve build/index.js",
         "manual": true,
         "port": 4200
+      },
+      "configurations": {
+        "dev": {
+          "port": 4400,
+          "devServerPort": 4200
+        }
       }
     },
     "start": {
